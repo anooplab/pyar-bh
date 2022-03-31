@@ -209,8 +209,8 @@ def run_bh(cla):
     if os.path.exists('best.xyz'):
         os.remove('best.xyz')
 
-    def coordinate_update(x):
-        write_xyz(x, cla['atoms'], f"intermediates stage",
+    def coordinate_update(x, e, m):
+        write_xyz(x, atoms, f"{m} Energy={e}",
                   'best_trj.xyz')
 
     coordinates /= bohr2angstrom
