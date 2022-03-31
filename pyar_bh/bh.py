@@ -217,7 +217,7 @@ def run_bh(cla):
     coordinates = coordinates.reshape(-1)
     result = bh(objective_function, coordinates,
                 minimizer_kwargs={'method': 'BFGS', 'jac': True, 'args': arguments}, T=400,
-                callback=coordinate_update)
+                disp=True, stepsize=0.5, callback=coordinate_update)
     c = result.x * bohr2angstrom
     c = c.reshape((-1, 3))
     print(result)
