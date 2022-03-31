@@ -224,7 +224,7 @@ def run_bh(cla):
 
     print(result.message)
     final_energy = result.fun
-    final_coordinates = result.x
+    final_coordinates = result.x * bohr2angstrom
     write_xyz(c, atoms, f"Energy: {final_energy}", 'best.xyz')
     print("Global Best")
     print(f"Energy: {final_energy}")
